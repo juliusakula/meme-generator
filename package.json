@@ -1,0 +1,9 @@
+{
+  "name": "juliusakula",
+  "private": true,
+  "version": "0.0.1",
+  "devDependencies": {
+    "angular-builds": "https://github.com/DanTup/angular-builds/tarball/1.2.14",
+    "bootstrap": "^3.3.2"
+  }
+}
