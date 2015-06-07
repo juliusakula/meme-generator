@@ -48,8 +48,14 @@ function redrawMeme(image, topLine, bottomLine) {
   // Get Canvas2DContext
   var canvas = document.querySelector('canvas');
   var ctx = canvas.getContext("2d");
-  if (image != null)
+  if (image != null){
     ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+  }
+  else{
+      if(!document.querySelector('.alertify-log')){
+        alertify.success('Select an image from your computer!');
+      }
+  }
   
   // Text attributes
   ctx.font = '30pt Impact';
@@ -74,7 +80,6 @@ function redrawMeme(image, topLine, bottomLine) {
         heights.push( -20 + ((len - i) * 40 ) ); // 20 plus 40px for each line.. first lines have to have greatest numbers
     }
     for(line in lines){
-        
         ctx.fillText(lines[line], canvas.width / 2, canvas.height - heights[line]);
         ctx.strokeText(lines[line], canvas.width / 2, canvas.height - heights[line]);
     }
